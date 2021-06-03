@@ -22,7 +22,7 @@ class ShoppingCart(Shop):
 
     def items_list(self) -> str:
         items = []
-        for sku_item in list(self.cart.values()):
+        for sku_item in list(self.cart.keys()):
             items.append(sku_item.sku_to_item_map[sku_item])
         return items.sort().join(", ")
 
